@@ -3,7 +3,7 @@ node{
     git 'https://github.com/wilsonGmn/mave-pipeline'
   }
   stage("Compile Package"){
-    def mvn-home = tool name: 'LocalMaven', type: 'maven'
-    sh "${mvn-home}/bin/mvn package"
+    def mvnhome = tool name: 'LocalMaven', type: 'maven'
+    sh "${mvnhome}/bin/mvn package"
   }
 }
