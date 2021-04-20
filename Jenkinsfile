@@ -1,6 +1,8 @@
+ properties([parameters([choice(choices: ['master', 'main', 'feature'], description: 'Select a branch to build', name: 'branch')])])
 node{
   stage('CSM Checkout'){
-    git 'https://github.com/wilsonGmn/mave-pipeline.git'
+    echo "Pulling Changes from branch ${params.branch}"
+    git url: 'https://github.com/wilsonGmn/mave-pipeline', branch: "${params.branch}"
   }
   stage('Compile Package'){
     //
