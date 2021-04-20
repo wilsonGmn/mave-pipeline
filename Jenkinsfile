@@ -7,6 +7,6 @@ node{
   stage('Compile Package'){
     //
     def mvnhome = tool name: 'LocalMaven', type: 'maven'
-    sh "${mvnhome}/bin/mvn clean package ."
+    sh "C:mavenapache-maven-3.8.1/bin/mvn clean package"
   }
 }
